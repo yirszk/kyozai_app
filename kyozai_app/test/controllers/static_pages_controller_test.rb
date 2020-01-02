@@ -7,25 +7,25 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get home" do
-    get root_url
+    get static_pages_home_url
     assert_response :success
     assert_select "title", @base_title
   end
 
   test "should get help" do
-    get help_url
+    get static_pages_help_url
     assert_response :success
     assert_select "title", "ヘルプ | #{@base_title}"
   end
 
   test "should get about" do
-    get about_url
+    get static_pages_about_url
     assert_response :success
     assert_select "title", "サイト概要 | #{@base_title}"
   end
 
   test "should get contact" do
-    get contact_url
+    get static_pages_contact_url
     assert_response :success
     assert_select "title", "コンタクト | #{@base_title}"
   end
