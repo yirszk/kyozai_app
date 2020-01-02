@@ -41,6 +41,10 @@ header {
   }
 }
 
+.article {
+  padding-top: 65px;
+}
+
 .clear {
   clear: left;
 }
@@ -159,4 +163,13 @@ footer {
   font-size: 25px;
   padding: 21px 0;
   display: none;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
 }
