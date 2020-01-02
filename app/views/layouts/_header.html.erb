@@ -1,13 +1,13 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container bg-primary text-light">
-    <%= link_to "教材比較.COM", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
+<header>
+  <div class="header-left">
+    <%= link_to root_url do %>
+      <%= image_tag "top-logo.svg", class: "logo" %>
+    <% end %>
+  </div>
+  <%= icon('fas', 'bars', class: "menu-icon") %>
+  <div class="header-right">
+      <ul>
         <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
       </ul>
-    </nav>
   </div>
 </header>
