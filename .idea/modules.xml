@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/RubyMineProject.iml" filepath="$PROJECT_DIR$/.idea/RubyMineProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toy_app.iml" filepath="$PROJECT_DIR$/.idea/modules/toy_app.iml" />
     </modules>
   </component>
 </project>

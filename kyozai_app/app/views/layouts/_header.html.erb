@@ -1,0 +1,13 @@
+<header>
+  <div class="header-left">
+    <%= link_to root_url do %>
+      <%= image_tag "top-logo.svg", class: "logo" %>
+    <% end %>
+  </div>
+  <%= icon('fas', 'bars', class: "menu-icon") %>
+  <div class="header-right">
+      <ul>
+        <li><%= link_to "Home",   '#' %></li>
+      </ul>
+  </div>
+</header>
