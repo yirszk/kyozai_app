@@ -14,4 +14,3 @@ on_worker_boot do
   # deploying-rails-applications-with-the-puma-web-server#on-worker-boot
   ActiveRecord::Base.establish_connection
 end
-
