@@ -3,7 +3,9 @@
   <p>教材比較.comは日本中にあるあらゆる教材を整理・レビューします。<br>
     学習者の皆さんのレビューで、教材選びを賢く行える世界を作りあげましょう。
   </p>
-  <a class="signup btn"><%= icon('fas', 'user-plus') %>新規レビュワー登録</a>
+  <%= link_to(signup_path) do %>
+    <span class="signup btn"><%= icon('fas', 'user-plus') %>新規レビュワー登録</span>
+  <% end %>
 </div>
 
 <div class="content-wrapper">
@@ -52,11 +54,13 @@
 </div>
 
 <div class="message-wrapper"/>
-  <div class="container">
-    <div class="heading">
-      <h2>あなたもレビュワーとして、参考書を整理してみませんか？</h2>
-      <h3>Why don't you organize study materials as a reviewer?</h3>
-    </div>
-    <span class="btn message">レビュワーになる</span>
+<div class="container">
+  <div class="heading">
+    <h2>あなたもレビュワーとして、参考書を整理してみませんか？</h2>
+    <h3>Why don't you organize study materials as a reviewer?</h3>
   </div>
+  <%= link_to(signup_path) do %>
+    <span class="btn message">レビュワーになる</span>
+  <% end %>
+</div>
 </div>
