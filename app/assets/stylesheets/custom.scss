@@ -176,12 +176,17 @@ footer {
 
 /* forms */
 
-.signup-form {
+.form {
   margin-left: 50px;
-}
+  .signup{
 
-.login-form {
-  margin-left: 50px;
+  }
+  .user_new{
+
+  }
+  .btn{
+
+  }
 }
 
 input, textarea, select, .uneditable-input {
@@ -214,4 +219,16 @@ input {
 
 .alert-danger {
   color: red
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+  }
 }
