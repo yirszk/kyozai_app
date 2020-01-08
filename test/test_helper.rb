@@ -15,10 +15,17 @@ class ActiveSupport::TestCase
   end
 
   # テストユーザーとしてログインする
-  # tutorial通りにやっても上手く行かないため、以下を参考に修正
-  # https://stackoverflow.com/questions/44461101/accessing-session-in-integration-test
-  def log_in_as(user, password: 'password')
-    post login_path, params: { session: { email: user.email, password: password} }
+  def log_in_as(user)
+    session[:user_id] = user.id
   end
+end
 
+class ActionDispatch::IntegrationTest
+
+  # テストユーザーとしてログインする
+  def log_in_as(user, password: 'password', remember_me: '1')
+    post login_path, params: { session: { email: user.email,
+                                          password: password,
+                                          remember_me: remember_me } }
+  end
 end
