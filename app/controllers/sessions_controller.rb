@@ -7,9 +7,16 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     # ユーザーがデータベースに存在 かつ 認証に成功
     if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
+      if user.activated?
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+      else
+        message = "アカウントは作成されませんでした。"
+        message += "メールのアカウント作成リンクを再確認してください。"
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'

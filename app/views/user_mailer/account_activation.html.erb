@@ -1,11 +1,12 @@
 <h1>教材比較.COM</h1>
 
-<p>Hi <%= @user.name %>,</p>
+<p>こんにちは、 <%= @user.name %>さん</p>
 
 <p>
-Welcome to the Sample App! Click on the link below to activate your account:
+教材比較.COMへの登録ありがとうございます！
+以下のリンクをクリックして、アカウントの作成を完了してください！
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+<%= link_to "アカウント作成", edit_account_activation_url(@user.activation_token,
         email: @user.email) %>
 

@@ -1,5 +1,6 @@
-Hi <%= @user.name %>,
+こんにちは <%= @user.name %>さん！
 
-Welcome to the Sample App! Click on the link below to activate your account:
+教材比較.COMへの登録ありがとうございます！
+以下のリンクをクリックして、アカウントの作成を完了してください！
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
