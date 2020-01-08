@@ -13,7 +13,6 @@ a {
   text-decoration: none;
 }
 
-
 header {
   height: 65px;
   width: 100%;
@@ -23,7 +22,7 @@ header {
   z-index: 10;
   .logo {
     width: 160px;
-    margin: 30px 0 0 20px;
+    margin: 24px 0 0 0;
   }
   .header-left {
     float: left;
@@ -43,6 +42,7 @@ header {
 
 .article {
   padding-top: 65px;
+  overflow: hidden;
 }
 
 .clear {
@@ -75,7 +75,6 @@ header {
 
 .btn {
   padding: 8px 24px;
-  margin-left: 10px;
   color: black;
   display: inline-block;
   opacity: 0.8;
