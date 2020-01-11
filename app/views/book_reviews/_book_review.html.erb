@@ -1,0 +1,10 @@
+<li id="book_review-<%= book_review.id %>">
+  <span class="user"><%= link_to book_review.user.name, book_review.user %></span>
+  <span class="contentBR"><%= book_review.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(book_review.created_at) %> ago.
+    <% if current_user?(book_review.user) %>
+      <%= link_to "削除", book_review, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  </span>
+</li>

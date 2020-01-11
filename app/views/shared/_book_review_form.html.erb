@@ -1,0 +1,7 @@
+<%= form_for(@book_review) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "新しい書評を作成する・・・" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

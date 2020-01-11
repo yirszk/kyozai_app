@@ -1,7 +1,7 @@
 <div class="form">
   <div class="#{yield(:form_type}">
     <%= form_for(@user, url: yield(:url)) do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
 
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
