@@ -11,9 +11,8 @@
   </head>
 
   <body>
-    <div id="cover"></div>
+    <div id="main">
     <%= render 'layouts/header' %>
-    <div class="article">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
@@ -23,3 +22,34 @@
     </div>    
   </body>
 </html>
+
+<div id="menu">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <% if logged_in? %>
+      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to "Profile", current_user %></li>
+      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <li><%= link_to "Log out", logout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Log in", login_path %></li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    var show = document.getElementById('show');
+    var main = document.getElementById('main');
+
+    show.addEventListener('click', function() {
+      if (main.className === 'open') {
+        main.className = '';
+      } else {
+        main.className = 'open';
+      }
+    });
+  })();
+</script>

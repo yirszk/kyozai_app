@@ -29,18 +29,23 @@ header {
   }
   .header-right {
     float: right;
-    background-color: rgba(255, 255, 255, 0.3);
     transition: all 0.5s;
+    max-height: 65px;
   }
   a {
-    line-height: 65px;
     padding: 0 25px;
     color: white;
-    display: block;
+    display: inline;
+  }
+  ul {
+    display: table;
+  }
+  li {
+    display: inline;
   }
 }
 
-.article {
+#main {
   padding-top: 65px;
   overflow: hidden;
 }
