@@ -1,66 +1,82 @@
-<div class="top-wrapper">
-  <h1>日本中の教材を整理しよう</h1>
-  <p>教材比較.comは日本中にあるあらゆる教材を整理・レビューします。<br>
-    学習者の皆さんのレビューで、教材選びを賢く行える世界を作りあげましょう。
-  </p>
-  <%= link_to(signup_path) do %>
-    <span class="signup btn"><%= icon('fas', 'user-plus') %>新規レビュワー登録</span>
-  <% end %>
-</div>
-
-<div class="content-wrapper">
-  <div class="container">
-    <div class="heading">
-      <h2>どのように教材を探しますか？</h2>
-    </div>
-    <div class="contents">
-      <div class="content">
-        <div class="content-icon">
-          <img src="#">
-          <p>教科から探す</p>
-        </div>
-        <p class="txt-contents">教科から教材を探します。</p>
-      </div>
-    </div>
-    <div class="contents">
-      <div class="content">
-        <div class="content-icon">
-          <img src="#">
-          <p>先生から探す</p>
-        </div>
-        <p class="txt-contents">先生から教材を探します。</p>
-      </div>
-    </div>
-    <div class="contents">
-      <div class="content">
-        <div class="content-icon">
-          <img src="#">
-          <p>参考書を探す</p>
-        </div>
-        <p class="txt-contents">参考書を探します。</p>
-      </div>
-    </div>
-    <div class="contents">
-      <div class="content">
-        <div class="content-icon">
-          <img src="#">
-          <p>講義から探す</p>
-        </div>
-        <p class="txt-contents">講義を探します。</p>
-      </div>
-      <div class="clear"></div>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="book_review_form">
+        <%= render 'shared/book_review_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Book  Feed</h3>
+      <%= render 'shared/feed' %>
     </div>
   </div>
-</div>
-
-<div class="message-wrapper"/>
-<div class="container">
-  <div class="heading">
-    <h2>あなたもレビュワーとして、参考書を整理してみませんか？</h2>
-    <h3>Why don't you organize study materials as a reviewer?</h3>
+<% else %>
+  <div class="top-wrapper">
+    <h1>日本中の教材を整理しよう</h1>
+    <p>教材比較.comは日本中にあるあらゆる教材を整理・レビューします。<br>
+      学習者の皆さんのレビューで、教材選びを賢く行える世界を作りあげましょう。
+    </p>
+    <%= link_to(signup_path) do %>
+      <span class="signup btn"><%= icon('fas', 'user-plus') %>新規レビュワー登録</span>
+    <% end %>
   </div>
-  <%= link_to(signup_path) do %>
-    <span class="btn message">レビュワーになる</span>
-  <% end %>
-</div>
-</div>
+  <div class="content-wrapper">
+    <div class="container">
+      <div class="heading">
+        <h2>どのように教材を探しますか？</h2>
+      </div>
+      <div class="contents">
+        <div class="content">
+          <div class="content-icon">
+            <img src="#">
+            <p>教科から探す</p>
+          </div>
+          <p class="txt-contents">教科から教材を探します。</p>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="content">
+          <div class="content-icon">
+            <img src="#">
+            <p>先生から探す</p>
+          </div>
+          <p class="txt-contents">先生から教材を探します。</p>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="content">
+          <div class="content-icon">
+            <img src="#">
+            <p>参考書を探す</p>
+          </div>
+          <p class="txt-contents">参考書を探します。</p>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="content">
+          <div class="content-icon">
+            <img src="#">
+            <p>講義から探す</p>
+          </div>
+          <p class="txt-contents">講義を探します。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="message-wrapper">
+    <div class="container">
+      <div class="heading">
+        <h2>あなたもレビュワーとして、参考書を整理してみませんか？</h2>
+        <h3>Why don't you organize study materials as a reviewer?</h3>
+      </div>
+      <%= link_to(signup_path) do %>
+        <span class="btn message">レビュワーになる</span>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
