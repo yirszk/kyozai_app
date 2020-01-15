@@ -1,13 +1,9 @@
 <li id="book_review-<%= book_review.id %>">
   <span class="user"><%= link_to book_review.user.name, book_review.user %></span>
-<<<<<<< HEAD
-  <span class="contentBR"><%= book_review.content %></span>
-=======
   <span class="contentBR">
     <%= book_review.content %>
     <%= image_tag book_review.picture.url if book_review.picture? %>
   </span>
->>>>>>> user-microposts
   <span class="timestamp">
     Posted <%= time_ago_in_words(book_review.created_at) %> ago.
     <% if current_user?(book_review.user) %>

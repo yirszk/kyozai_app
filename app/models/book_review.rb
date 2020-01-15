@@ -1,10 +1,6 @@
 class BookReview < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
-<<<<<<< HEAD
-  validates :user_id, presence: true
-  validates :content, presence: true
-=======
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true
@@ -18,5 +14,4 @@ class BookReview < ApplicationRecord
         errors.add(:picture, "画像は5MB以下にしてください。")
       end
     end
->>>>>>> user-microposts
 end

@@ -10,10 +10,7 @@ class BookReviewsInterfaceTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get root_path
     assert_select 'div.pagination'
-<<<<<<< HEAD
-=======
     assert_select 'input[type="file"]' 
->>>>>>> user-microposts
     # 無効な送信
     assert_no_difference 'BookReview.count' do
       post book_reviews_path, params: { book_review: { content: ''}}
@@ -21,11 +18,6 @@ class BookReviewsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     # 有効な送信
     content = "This book is worth reading"
-<<<<<<< HEAD
-    assert_difference 'BookReview.count', 1 do
-      post book_reviews_path, params: { book_review: { content: content } }
-    end
-=======
     picture = fixture_file_upload('test/fixtures/top.jpg', 'image/png')
     assert_difference 'BookReview.count', 1 do
       post book_reviews_path, params: 
@@ -33,7 +25,6 @@ class BookReviewsInterfaceTest < ActionDispatch::IntegrationTest
                          picture: picture } }
     end
     assert assigns(:book_review).picture? 
->>>>>>> user-microposts
     assert_redirected_to root_url
     follow_redirect!
     assert_match content, response.body
