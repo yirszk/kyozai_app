@@ -22,7 +22,11 @@ class BookReviewsController < ApplicationController
   private
 
     def book_reviews_params
+<<<<<<< HEAD
         params.require(:book_review).permit(:content)
+=======
+        params.require(:book_review).permit(:content, :picture)
+>>>>>>> user-microposts
     end
 
     def correct_user
