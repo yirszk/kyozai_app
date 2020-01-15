@@ -22,7 +22,7 @@ class BookReviewsController < ApplicationController
   private
 
     def book_reviews_params
-        params.require(:book_review).permit(:content)
+        params.require(:book_review).permit(:content, :picture)
     end
 
     def correct_user
