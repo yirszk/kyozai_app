@@ -18,8 +18,17 @@ User.create!(name:  "Example User",
                activated_at: Time.zone.now)
 end
 
+# Book Review
 users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.paragraph(10)
   users.each { |user| user.book_reviews.create!(content: content)}
 end
+
+# Realtionship
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
